@@ -104,6 +104,9 @@ TARGET_HARDWARE_3D := true
 TARGET_USES_ION := true
 USE_OPENGL_RENDERER := true
 
+# Hardware
+TARGET_SPECIFIC_HEADER_PATH := device/huawei/hi6250/include
+
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_hi6250
 TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/init/init_berlin.cpp
