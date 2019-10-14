@@ -1103,12 +1103,6 @@ on property:bastet.service.enable=true
 
 # Start service
 
-service HwCamCfgSvr /vendor/bin/HwCamCfgSvr hi6250 BERLIN
-    class main
-    user media
-    group audio camera inet net_bt net_bt_admin net_bw_acct mediadrm wakelock system
-    writepid /dev/cpuset/system-background/tasks /dev/stune/system-background/tasks
-
 service ril-daemon /vendor/bin/rild
     class late_start
     socket rild stream 660 root radio

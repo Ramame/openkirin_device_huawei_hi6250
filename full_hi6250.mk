@@ -23,4 +23,20 @@
 # *not* include it on all devices, so it is safe even with hardware-specific
 # components.
 
-add_lunch_combo lineage_hi6250-userdebug
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/locales_full.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n.mk)
+
+# Device
+$(call inherit-product, device/huawei/hi6250/device.mk)
+
+PRODUCT_NAME := full_hi6250
+PRODUCT_DEVICE := hi6250
+PRODUCT_BRAND := hi6250
+PRODUCT_MANUFACTURER := HUAWEI
+PRODUCT_MODEL := hi6250
+
+# Vendor
+PRODUCT_RESTRICT_VENDOR_FILES := false
+

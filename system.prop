@@ -1,69 +1,77 @@
-# Android Run Time
-ro.sys.fw.dex2oat_thread_count=8
-
-# ActivityManager
+# Activity Manager
 ro.config.max_starting_bg=8
 ro.sys.fw.use_trim_settings=true
 
-ro.opengles.version=196610
-ro.sf.lcd_density=480
-drm.service.enabled=true
-sys.refresh.dirty=1
-ro.config.hw_media_flags=3
-ro.config.enable_iaware=true
-ro.config.hw_dts=true
-ro.config.ipv4.mtu=1400
+# Android
+ro.sys.fw.dex2oat_thread_count=8
 
-ro.hardware.alter=Hisilicon Kirin 655
+# Audio
+ro.config.hw_dts=true
 
 # Camera
 camera.hal1.packagelist=com.google.android.GoogleCamera
-ro.config.hw_camera_zsl=true
 ro.config.hw_burst_snapshot=true
+ro.config.hw_camera_zsl=true
+ro.config.hw_sensorhub=true
+ro.config.hw_support_geofence=true
+
+# Display
+ro.sf.lcd_density=480
+
+# DRM
+drm.service.enabled=true
+
+# FRP
+ro.frp.pst=/dev/block/bootdevice/by-name/frp
+
+# Hardware
+bastet.service.enable=true
+ro.hardware.alter=Hisilicon Kirin 655
+
+# Graphics
+ro.config.enable_iaware=true
+ro.config.hw_media_flags=3
+ro.opengles.version=196610
+sys.refresh.dirty=1
+
+# Network
+ro.config.ipv4.mtu=1400
 
 # Performance
 ro.am.reschedule_service=true
 ro.config.enable_rcc=true
 
-# local
-net.tethering.noprovisioning=true
-persist.radio.nv_match_by_card=2
-ro.config.hw_lte_support=true
-ro.frp.pst=/dev/block/bootdevice/by-name/frp
-gsm.fastdormancy.mode=3
-
 # RIL
-ro.config.dsds_mode=umts_gsm
+audioril.lib=libhuawei-audio-ril.so
+gsm.fastdormancy.mode=3
+persist.radio.apm_sim_not_pwdn=1
+persist.dsds.enabled=true
 persist.radio.modem.cap=09A9C
-ro.config.hw_dsda=false
-ro.config.hw_save_pin=true
 persist.radio.multisim.config=dsds
-ro.config.modem_number=2
-rild.rild1_ready_to_start=false
-ro.config.client_number=2
+persist.radio.nv_match_by_card=2
+ril.modem.balong_nvm_server=true
 rild.libargs1=-m modem1
+rild.libargs=-m modem0
 rild.libpath1=/vendor/lib64/libbalong-ril-1.so
 rild.libpath=/vendor/lib64/libbalong-ril.so
-rild.libargs=-m modem0
-ro.telephony.default_network=9
-ro.config.is_start_commril=true
+rild.rild1_ready_to_start=false
+ro.config.client_number=2
+ro.config.dsds_mode=umts_gsm
 ro.config.default_commril_mode=ULG_MODE
-persist.dsds.enabled=true
+ro.config.hw_dsda=false
+ro.config.hw_lte_support=true
+ro.config.hw_save_pin=true
+ro.config.is_start_commril=true
+ro.config.modem_number=2
+ro.config.signalplus.xpass=true
 ro.multi.rild=false
-
+ro.telephony.default_network=9
 ro.telephony.ril_class=HwHisiRIL
-audioril.lib=libhuawei-audio-ril.so
-persist.radio.apm_sim_not_pwdn=1
-ril.modem.balong_nvm_server=true
+
+# Tethering
+net.tethering.noprovisioning=true
 
 # WiFi
-wifi.interface=wlan0
-
-# Hisi
 is_hisi_connectivity_chip=1
 ro.hardware.consumerir="hisi.hi6250"
-
-bastet.service.enable=true
-ro.config.signalplus.xpass=true
-ro.config.hw_support_geofence=true
-ro.config.hw_sensorhub=true
+wifi.interface=wlan0

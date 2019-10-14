@@ -1,4 +1,5 @@
-# Copyright (C) 2017 The LineageOS Project
+#
+# Copyright 2019 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -11,14 +12,28 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
 
-$(call inherit-product, device/honor/berlin/full_berlin.mk)
+# This contains the module build definitions for the hardware-specific
+# components for this device.
+#
+# As much as possible, those components should be built unconditionally,
+# with device-specific names to avoid collisions, to avoid device-specific
+# bitrot and build breakages. Building a component unconditionally does
+# *not* include it on all devices, so it is safe even with hardware-specific
+# components.
 
-# Boot animation
-TARGET_SCREEN_HEIGHT := 1920
-TARGET_SCREEN_WIDTH := 1080
+# Device
+$(call inherit-product, device/huawei/hi6250/full_hi6250.mk)
 
+PRODUCT_NAME := lineage_hi6250
+PRODUCT_DEVICE := hi6250
+PRODUCT_BRAND := hi6250
+PRODUCT_MODEL := hi6250
+PRODUCT_MANUFACTURER := Huawei
+
+# GSM
 PRODUCT_GMS_CLIENTID_BASE := android-huawei
 
-PRODUCT_NAME := lineage_berlin
-BOARD_VENDOR := honor
+# LineageOS
+$(call inherit-product, vendor/cm/config/common_full_phone.mk)
