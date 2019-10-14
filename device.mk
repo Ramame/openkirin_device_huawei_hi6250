@@ -84,6 +84,24 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     hwcomposer.hi6250
 
+# NFC
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/system/etc/libnfc_brcm_pra_L31.conf:system/etc/libnfc-brcm.conf \
+    $(LOCAL_PATH)/rootdir/system/etc/libnfc_nxp_pra_L31.conf:system/etc/libnfc-nxp.conf \
+    $(LOCAL_PATH)/rootdir/system/lib64/hw/nfc_nci.pn54x.default.so:system/lib64/hw/nfc_nci.pn54x.default.so \
+
+PRODUCT_PACKAGES += \
+    com.android.nfc_extras \
+    com.nxp.nfc.nq \
+    com.nxp.nfc.nq.xml \
+    libnqnfc-nci \
+    libp61-jcop-kit \
+    NQNfcNci \
+    nfc_nci.nqx.default \
+    nqnfcee_access.xml \
+    nqnfcse_access.xml \
+    Tag \
+
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
