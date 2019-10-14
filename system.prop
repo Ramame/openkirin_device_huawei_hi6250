@@ -66,7 +66,7 @@ ro.config.modem_number=2
 ro.config.signalplus.xpass=true
 ro.multi.rild=false
 ro.telephony.default_network=9
-ro.telephony.ril_class=HwHisiRIL
+ro.telephony.ril_class=HuaweiRIL
 
 # Tethering
 net.tethering.noprovisioning=true
