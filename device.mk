@@ -80,6 +80,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/system/etc/clatd.conf:system/etc/clatd.conf \
     $(LOCAL_PATH)/rootdir/system/etc/geoloc.conf:system/etc/geoloc.conf
 
+# Graphics
+PRODUCT_PACKAGES += \
+    hwcomposer.hi6250
+
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
